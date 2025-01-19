@@ -1,0 +1,509 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-orange: #FF8A00;
+    --dark-red: #B22222;
+    --background: #FFF8F3;
+    --dark-brown: #3D1810;
+    --white: #ffffff;
+    --text-color: #333333;
+    --border-color: #E2E8F0;
+    --success-green: #166534;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation styles */
+.navbar {
+    background-color: var(--background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--dark-red);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--dark-red);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;
+    padding-top: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    position: relative;
+}
+
+.order-confirmation-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+/* Decorative elements */
+.orange-blob {
+    position: absolute;
+    z-index: -1;
+    background-color: var(--primary-orange);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.blob-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+}
+
+/* Floating food SVGs */
+.floating-food {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.burger {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23FFA500' d='M58.6 224h394.7c34.6 0 54.6-43.9 34.8-75.9C448 83.2 359.5 32.1 256 32 152.5 32.1 64 83.2 23.8 148.1 4.1 180.1 24.1 224 58.6 224zM384 112a16 16 0 1 1-16 16 16 16 0 0 1 16-16zM256 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm-128 32a16 16 0 1 1-16 16 16 16 0 0 1 16-16zm352 272H32a16 16 0 0 0-16 16v16a64 64 0 0 0 64 64h352a64 64 0 0 0 64-64v-16a16 16 0 0 0-16-16zm-24-96H88a24 24 0 0 1 0-48h336a24 24 0 0 1 0 48z'/%3E%3C/svg%3E");
+    top: 10%;
+    left: 5%;
+}
+
+.pizza {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23FF6347' d='M158.87.15c-16.16-1.52-31.2 8.42-35.33 24.12l-14.81 56.27c187.62 5.49 314.54 130.61 322.48 317l56.94-15.78c15.72-4.36 25.49-19.68 23.62-35.9C490.89 165.08 340.78 17.32 158.87.15zm-58.47 112L.55 491.64a16.21 16.21 0 0 0 20 19.75l379-105.1c-4.27-174.89-123.08-292.14-299.15-294.1zM128 416a32 32 0 1 1 32-32 32 32 0 0 1-32 32zm48-152a32 32 0 1 1 32-32 32 32 0 0 1-32 32zm104 104a32 32 0 1 1 32-32 32 32 0 0 1-32 32z'/%3E%3C/svg%3E");
+    top: 70%;
+    right: 10%;
+}
+
+.taco {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23FFD700' d='M256 192s-32-32-96-32c-96 0-160 64-160 192 0 35.34 28.66 64 64 64h384c35.34 0 64-28.66 64-64 0-128-64-192-160-192-64 0-96 32-96 32zm240 160H16c-8.84 0-16-7.16-16-16 0-112 48-160 128-160 48 0 73.61 17.35 96 32 22.39-14.65 48-32 96-32 80 0 128 48 128 160 0 8.84-7.16 16-16 16z'/%3E%3C/svg%3E");
+    bottom: 20%;
+    left: 15%;
+}
+/* Order confirmation container */
+.order-confirmation-container {
+    background-color: var(--background);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.order-confirmation-container h2 {
+	
+  font-family:'Playfair Display', serif;
+    color: var(--dark-red);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.success {
+    color: var(--primary-orange);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.error {
+    color: var(--dark-red);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.order-details {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.order-details p {
+    margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e67e00;
+}
+
+/* Tick animation */
+.tick-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+}
+
+.tick {
+    width: 100%;
+    height: 100%;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--primary-orange);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.check {
+    fill: none;
+    stroke: var(--dark-red);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Bike animation */
+.bike-animation-container {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.bike-image {
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    width: 100px;
+    height: auto;
+    animation: bikemove 10s linear infinite;
+}
+
+@keyframes bikemove {
+    0% {
+        left: -100px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Cracker animations */
+.cracker-container {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    top: 0;
+}
+
+.cracker-container.left {
+    left: 20px;
+}
+
+.cracker-container.right {
+    right: 20px;
+}
+
+.cracker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-orange);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.cracker::before,
+.cracker::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-orange);
+}
+
+.cracker::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cracker::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.cracker-container.left .cracker:nth-child(1) {
+    top: 20%;
+    animation: explode 2s ease-out infinite;
+}
+
+.cracker-container.left .cracker:nth-child(2) {
+    top: 50%;
+    animation: explode 2s ease-out 0.5s infinite;
+}
+
+.cracker-container.left .cracker:nth-child(3) {
+    top: 80%;
+    animation: explode 2s ease-out 1s infinite;
+}
+
+.cracker-container.right .cracker:nth-child(1) {
+    top: 30%;
+    animation: explode 2s ease-out 0.2s infinite;
+}
+
+.cracker-container.right .cracker:nth-child(2) {
+    top: 60%;
+    animation: explode 2s ease-out 0.7s infinite;
+}
+
+.cracker-container.right .cracker:nth-child(3) {
+    top: 90%;
+    animation: explode 2s ease-out 1.2s infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--dark-brown);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+  font-family:'Playfair Display', serif;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: var(--primary-orange);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: var(--white);
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--primary-orange);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-form button {
+    background-color: var(--primary-orange);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #e67e00;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animation styles */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 1rem;
+    }
+
+    .order-confirmation-container {
+        padding: 1.5rem;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-confirmation-container {
+        padding: 1rem;
+    }
+
+    .tick-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .bike-image {
+        width: 60px;
+    }
+}
+
